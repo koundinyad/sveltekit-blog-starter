@@ -27,6 +27,9 @@
 						<h3>
 							{post.metadata.title}
 						</h3>
+						<span>
+							{post.metadata.type}
+						</span>
 						<span>{post.metadata.date}</span>
 					</div>
 				</a>

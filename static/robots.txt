@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://svelte-portfolio-template.netlify.app/sitemap.xml

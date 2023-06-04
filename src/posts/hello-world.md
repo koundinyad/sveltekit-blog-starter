@@ -2,6 +2,7 @@
 title: Hello World
 date: 26-05-2023
 slug: hello-world
+type: writing
 ---
 
 # Hello World

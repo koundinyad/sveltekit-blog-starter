@@ -1,5 +1,7 @@
 # Portfolio Website Template
 
+A preview of this site is available at [https://svelte-portfolio-starter.netlify.app/about](https://svelte-portfolio-starter.netlify.app/about)
+
 ## Glossary
 
 - **NodeJS**  
@@ -35,7 +37,7 @@
   SvelteKit is a framework built on top of Svelte. This comes with pre-installed setup for routing pages, managing server-side code etc  
   Ref: https://kit.svelte.dev/
 - **Components**  
-  A component is a reusable piece of code to create UI. Every `.svelte` file is technically a component (unless it's a route)   
+  A component is a reusable piece of code to create UI. Every `.svelte` file is technically a component (unless it's a route)  
   Ref: https://svelte.dev/tutorial/basics
 - **Routing**  
   A route is the link we see on the URL bar on our browsers. Any new page is technically a route- e.g. example.com/about, example.com/contact, example.com/cats  
@@ -121,7 +123,7 @@ On any HTML element, events can be 'listened' to, with the following syntax
 	}
 </script>
 
-<button on:click={dance}>Dance</button>
+<button on:click="{dance}">Dance</button>
 ```
 
 We define a function to do a certain thing, and pass it (without the `()` at the end of the function name) to trigger it when the event occurs
@@ -132,9 +134,9 @@ Displaying some content is `x` is true, if not, display something else
 
 ```html
 {#if x == true}
-    <p>Some content</p>
+<p>Some content</p>
 {:else}
-    <p>Some other content</p>
+<p>Some other content</p>
 {/if}
 ```
 
@@ -144,7 +146,7 @@ Looping through an array of data is a common pattern in JS, and Svelte comes wit
 
 ```html
 {#each posts as post}
-    <h1>{post.title}</h1>
+<h1>{post.title}</h1>
 {/each}
 ```
 
@@ -152,4 +154,3 @@ In the above code block
 
 - `posts` is an iterable/array
 - `post` is each of the items in `posts` in the loop
-

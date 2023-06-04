@@ -2,6 +2,7 @@
 title: Markdown Posts
 date: 26-05-2023
 slug: md
+type: installation
 ---
 
 <script>
