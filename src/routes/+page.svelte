@@ -23,7 +23,7 @@
 		<div class="posts">
 			{#each posts as post}
 				<a href={post.metadata.slug}>
-					<div class="post">
+					<div class="grid grid-cols-3">
 						<h3>
 							{post.metadata.title}
 						</h3>

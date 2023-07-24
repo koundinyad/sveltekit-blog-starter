@@ -1,3 +1,9 @@
+/* Initializing tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Resetting margin and padding */
 
 * {
@@ -5,9 +11,6 @@
 	margin: 0;
 	padding: 0;
 }
-
-/* Importing Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
 
 body {
 	background-color: #473f63;
@@ -66,4 +69,5 @@ nav ul {
 code {
 	font-size: 1.2em;
 	background-color: #262627;
+	font-family: 'Nova Mono', monospace;
 }

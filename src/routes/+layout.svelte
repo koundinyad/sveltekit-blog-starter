@@ -11,7 +11,7 @@
 	<meta name="description" content={config.description} />
 </svelte:head>
 
-<div id="title">
+<div class="fixed top-4 left-8 text-4xl">
 	<h1><a href="/">{config.title}</a></h1>
 </div>
 

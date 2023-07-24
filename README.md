@@ -8,7 +8,7 @@ A preview of this site is available at [https://svelte-portfolio-starter.netlify
    NodeJS is a JavaScript runtime engine. We use this to run a local the website locally on our computers  
   Ref: https://nodejs.org/en/about
 - **npm**  
-  npm is the package manager for NodeJS. Like pip/conda for python  
+  npm is the package manager for NodeJS. Like pip/conda for python, and it is typically included with NodeJS installation
   Ref: https://www.npmjs.com/
 - **Svelte**  
   Svelte is a modern JS library to built UI. It's just HTML/CSS/JS with some additional functionality  
