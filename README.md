@@ -1,6 +1,6 @@
 # Portfolio Website Template
 
-A preview of this site is available at [https://svelte-portfolio-starter.netlify.app/about](https://svelte-portfolio-starter.netlify.app/about)
+A preview of this site is available at [https://svelte-portfolio-starter.netlify.app/](https://svelte-portfolio-starter.netlify.app/)
 
 ## Glossary
 
@@ -154,3 +154,5 @@ In the above code block
 
 - `posts` is an iterable/array
 - `post` is each of the items in `posts` in the loop
+
+### State
