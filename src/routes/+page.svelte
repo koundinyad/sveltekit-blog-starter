@@ -60,7 +60,7 @@
 			  </Accordion>
 		</section>
 
-		<section class="md:justify-self-start md:fixed md:bottom-2">
+		<section class="md:justify-self-start md:fixed md:bottom-4">
 			<img src={$image} class="p-4 border border-black w-full max-h-[400px] md:w-[500px] md:max-h-[500px] md:mt-20"/>
 		</section>
 
