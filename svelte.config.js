@@ -16,7 +16,7 @@ const config = {
 		vitePreprocess(),
 		mdsvex({
 			extensions: ['.md', '.svx'],
-			remarkPlugins: [relativeImages]
+			remarkPlugins: [relativeImages],
 		})
 	],
 	vitePlugin: {

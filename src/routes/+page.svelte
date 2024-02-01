@@ -1,59 +1,61 @@
 <script>
-	const postsModules = import.meta.glob('../posts/*.md', { eager: true });
+	const projectModules = import.meta.glob('../projects/*.md', { eager: true });
+	const projects = Object.values(projectModules);
+	import { AccordionItem, Accordion } from 'flowbite-svelte';
 
-	const posts = Object.values(postsModules);
+	import ImageDisplay from '$lib/components/ImageDisplay.svelte';
+	 
+	 let imageContainer;
 </script>
 
 <div id="container">
-	<div class="about">
-		<p>
-			Hello! This is a portfolio skeleton template built with Svelte. You can start editing the
-			content by editing the files in the <code>/src</code>
-			folder.
-		</p>
-		<p>
-			All of the files and code for this website are in <code>/src</code> folder along with new
-			pages like <a href="/about">this one</a>
-		</p>
-	</div>
-	<section>
-		<h2>Recent works</h2>
-		<hr />
-		<!-- Looping through the list of posts with svelte's {#each} syntax ref: https://svelte.dev/tutorial/each-blocks -->
-		<div class="posts">
-			{#each posts as post}
-				<a href={post.metadata.slug}>
-					<div class="grid grid-cols-3">
-						<h3>
-							{post.metadata.title}
-						</h3>
-						<span>
-							{post.metadata.type}
-						</span>
-						<span>{post.metadata.date}</span>
-					</div>
-				</a>
-			{/each}
-		</div>
-	</section>
-</div>
+	<div class="grid grid-cols-2 gap-0">
+		<section class="flex flex-col h-screen justify-between">
+			<div>
+				<h1 class="title font-serif mb-6">
+					April Chu
+				</h1>
+				<div class="about max-w-[50ch]">
+					<p>
+						Design, code, etc. <br/>
+						Based in London by way of California and Taipei. <br/>
+						Interested in alternative media and re-enchanting the web. 
+					</p>
+				</div>
+			</div>
 
-<!-- All the styling within .svelte files is scoped. Meaning any CSS in this file doesn't effect rest of the files -->
-<style>
-	.posts {
-		display: flex;
-		flex-direction: column;
-		gap: 2em;
-	}
-	.post {
-		display: flex;
-		justify-content: space-between;
-		gap: 2em;
-		align-items: center;
-	}
-	#container {
-		display: flex;
-		flex-direction: column;
-		gap: 3em;
-	}
-</style>
+			<div bind:this = {imageContainer}>
+			</div>
+				
+			<!-- <ImageDisplay imagePath="src/projects/images/radio/cat.jpg" /> -->
+		</section>
+
+		<section>
+			<h2 class="font-serif mb-6">Work</h2>
+			  <Accordion flush class="text-black" classActive="text-black" classInactive="text-black">
+				{#each projects as project}
+					<AccordionItem class="border-0 text-black block text-base" classInactive="border-0" classActive="border-0" borderSharedClass="border-0" paddingFlush="py-3">
+					<span slot="header" class="grid grid-cols-6 place-content-stretch border-t border-black pt-1">
+						<span class="col-span-3">
+							{project.metadata.title}
+						</span>
+						<span class="col-span-2">
+							{project.metadata.type}
+						</span>
+						<span class="col-span-1">
+							{project.metadata.date}
+						</span>
+					</span>
+					<div slot="arrowup" class="hidden w-0">
+					</div>
+					<div slot="arrowdown" class="hidden w-0">
+					</div>
+					<p class="font-serif">
+						<svelte:component this={project.default} />
+					</p>
+					</AccordionItem>
+				{/each}
+			  </Accordion>
+		</section>
+	</div>
+</div>

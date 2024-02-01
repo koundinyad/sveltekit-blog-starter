@@ -1,10 +1,8 @@
-/* Initializing tailwind */
-@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Resetting margin and padding */
 
 * {
 	box-sizing: border-box;
@@ -12,62 +10,65 @@
 	padding: 0;
 }
 
-body {
-	background-color: #473f63;
-	background-image: repeating-linear-gradient(
-		-45deg,
-		rgba(255, 255, 255, 0.25),
-		rgba(255, 255, 255, 0.25) 1px,
-		transparent 1px,
-		transparent 6px
-	);
-	background-size: 4px 4px;
-	color: white;
-	font-family: 'Nova Mono', monospace;
-	padding: 10em;
-}
-#title {
-	z-index: 1;
-	position: fixed;
-	top: 20px;
-	right: 20px;
-}
-#title nav {
-	margin-top: 3em;
-}
-a {
-	color: white;
-	transition: all 0.4s ease-in-out;
-}
-a:hover {
-	color: black;
-	background-color: white;
+@font-face {
+  font-family: "IPAMincho";
+  src:
+    url("../static/fonts/IPAMincho_Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  /* font-display: swap; */
 }
 
-img {
-	max-width: 400px;
-	max-height: 400px;
+@layer base {
+  html::view-transition-old() {
+    animation-name: -ua-view-transition-fade-out;
+    animation-duration: inherit;
+    animation-fill-mode: inherit;
+  }
+
+  html::view-transition-new() {
+    animation-name: -ua-view-transition-fade-in;
+    animation-duration: inherit;
+    animation-fill-mode: inherit;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 1s;
+  }
+
+  body {
+    @apply bg-cream text-black overflow-y-scroll px-12 py-12;
+  }
+
+  h1 {
+    @apply text-lg;
+  }
+  h2 {
+    @apply text-lg;
+  }
+  h3 {
+    @apply text-base;
+  }
+  h4 {
+    @apply text-base;
+  }
+  h5 {
+    @apply text-base;
+  }
+  h6 {
+    @apply text-base
+  }
+  a {
+    @apply w-fit h-fit;
+  }
+  img {
+    @apply w-full h-full object-cover;
+  }
+  p {
+    @apply mb-4 leading-5;
+  }
 }
 
-nav ul {
-	list-style: none;
-	display: flex;
-	gap: 4em;
-}
+@layer components {
 
-@media screen and (max-width: 768px) {
-	body {
-		padding: 3em;
-	}
-}
-
-/* General Styles */
-* {
-	margin: 5px 0;
-}
-
-code {
-	font-size: 1.2em;
-	background-color: #262627;
-	font-family: 'Nova Mono', monospace;
 }

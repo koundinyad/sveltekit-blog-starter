@@ -1,8 +1,8 @@
 export const config = {
 	// Site Title
-	title: 'Svelte Portfolio',
+	title: 'April Chu',
 	// Site Description (max 150 characters)
-	description: 'A Svelte Portfolio Template',
+	description: 'Portfolio Site of April Chu',
 	// Site URL
-	url: 'https://svelte-portfolio-template.netlify.app'
+	url: 'https://april.wiki'
 };

@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 
 export function load({ params }) {
 	const { slug } = params;
-	const postsModules = import.meta.glob('../../posts/*.md', { eager: true });
+	const postsModules = import.meta.glob('../../projects/*.md', { eager: true });
 
 	let posts = Object.values(postsModules);
 
