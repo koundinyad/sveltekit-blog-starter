@@ -27,7 +27,7 @@
 			<div bind:this = {imageContainer}>
 			</div>
 				
-			<!-- <ImageDisplay imagePath="src/projects/images/radio/cat.jpg" /> -->
+			<ImageDisplay imagePath="src/projects/images/radio/cat.jpg" />
 		</section>
 
 		<section>
