@@ -26,8 +26,8 @@
 				</p>
 				<p class="hidden md:block">
 					CONTACT for collaborations or a chat <br/>
-					(email)hi@april.wiki <br/>
-					(insta)@in____april
+					(email) hi@april.wiki <br/>
+					(insta) @in____april
 				</p>
 			</div>
 		</section>
@@ -64,12 +64,12 @@
 			<img src={$image} class="p-4 border border-black w-full max-h-[400px] md:w-[500px] md:max-h-[500px] md:mt-20"/>
 		</section>
 
-		<section class="fixed bottom-0 w-96">
+		<section class="fixed bottom-0 w-96 block md:hidden">
 			<div class="border-t border-black">
-				<p class="pt-2 block md:hidden max-w-[50ch]">
+				<p class="pt-2  max-w-[50ch]">
 					CONTACT for collaborations or a chat <br/>
-					(email)hi@april.wiki <br/>
-					(insta)@in____april
+					(email) hi@april.wiki <br/>
+					(insta) @in____april
 				</p>
 			</div>
 		</section>

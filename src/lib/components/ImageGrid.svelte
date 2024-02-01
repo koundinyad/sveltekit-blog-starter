@@ -6,10 +6,13 @@
 
   let images = [];
 
-  const imageModules = import.meta.glob("../../projects/images/radio/*.{jpg,jpeg,png,gif}");
+  // const imageModules = import.meta.glob("../../projects/images/radio/*.{jpg,jpeg,png,gif}");
+
+  const imageModules = import.meta.glob("/images/radio/*.{jpg,jpeg,png,gif}");
 
   const loadImageData = async (modulePath) => {
     const imageName = modulePath.split('/').pop().split('.')[0]; // Extract the filename without extension
+    console.log(imageName);
     const altText = imageName.replace(/_/g, ' '); // Replace underscores with spaces
 
     const { default: imageUrl } = await imageModules[modulePath]();
