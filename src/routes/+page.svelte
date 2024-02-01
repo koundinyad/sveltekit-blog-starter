@@ -4,6 +4,10 @@
 	import { AccordionItem, Accordion } from 'flowbite-svelte';
 
 	import ImageDisplay from '$lib/components/ImageDisplay.svelte';
+
+	import { image } from '$lib/components/store.js';
+
+	$: console.log({img: $image})
 	 
 	 let imageContainer;
 </script>
@@ -27,7 +31,7 @@
 			<div bind:this = {imageContainer}>
 			</div>
 				
-			<ImageDisplay imagePath="src/projects/images/radio/cat.jpg" />
+			<img src={`${$image}`} alt="heyy"/>
 		</section>
 
 		<section>

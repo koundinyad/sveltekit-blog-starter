@@ -3,6 +3,7 @@ title: onoffon Radio
 date: 2023
 type: design, code
 slug: radio
+layout: ./layout.svelte
 ---
 
 <script>

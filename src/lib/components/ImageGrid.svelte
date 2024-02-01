@@ -2,14 +2,9 @@
 
 <script>
   import ImageDisplay from '$lib/components/ImageDisplay.svelte';
-  import { writable } from 'svelte/store';
   import { image } from './store.js';
 
   let images = [];
-
-//   for(let i = 0; i < 3; i++) {
-//     images.push(`/radio/${i}.jpg`);
-//   }
 
   const imageModules = import.meta.glob("../../projects/images/radio/*.{jpg,jpeg,png,gif}");
 

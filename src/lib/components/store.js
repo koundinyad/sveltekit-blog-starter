@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
 
-const image = writable();
+const image = writable("/favicon.png");
 
 export { image };
