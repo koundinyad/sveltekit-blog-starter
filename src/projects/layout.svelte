@@ -10,14 +10,22 @@
   
     let images = [];
     let filteredImages = [];
-    const imageModules = import.meta.glob("./images/**/*.{jpg,jpeg,png,gif}");
-  
+    const imageModules = import.meta.glob("./images/**/*.jpg"); 
+
+    const staticModules = import.meta.glob("../*.{jpg,jpeg,png,gif}");
+    import.meta.glob('../static/')
+
+    for (const path in staticModules) {
+  imageModules[path]().then((mod) => {
+    console.log("image", path, mod)
+  })}
+
     const loadImageData = async (modulePath) => {
       const imageName = modulePath.split('/').pop().split('.')[0]; // Extract the filename without extension
       const altText = imageName.replace(/_/g, ' '); // Replace underscores with spaces
   
       const { default: imageUrl } = await imageModules[modulePath]();
-      console.log(modulePath);
+    //   console.log(modulePath);
   
       return { src: modulePath, alt: altText };
     };
@@ -33,7 +41,8 @@
       });
 
       function displayImage (src) {
-        $image = "../src/projects" + src.replace(/^\./, '');
+        // $image = "../src/projects" + src.replace(/^\./, '');
+        $image = src;
         console.log($image);
     }
   </script>

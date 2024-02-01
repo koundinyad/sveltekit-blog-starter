@@ -1,7 +1,7 @@
 <!-- ImageGrid.svelte -->
 
 <script>
-  import ImageDisplay from '$lib/components/ImageDisplay.svelte';
+//   import ImageDisplay from '$lib/components/ImageDisplay.svelte';
   import { image } from './store.js';
 
   let images = [];
@@ -44,15 +44,3 @@
       <p>No images to display</p>
     {/if}
   </div>
-
-    <!-- <div class="grid grid-cols-3">
-    {#if images.length > 0}
-      {#each images as img}
-        <div class="border border-black h-[100px] flex items-center" on:mouseenter={() => displayImage(src) }>
-            <p class="m-auto text-center">{alt}</p>
-        </div>
-      {/each}
-    {:else}
-      <p>No images to display</p>
-    {/if}
-  </div> -->

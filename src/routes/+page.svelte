@@ -3,11 +3,11 @@
 	const projects = Object.values(projectModules);
 	import { AccordionItem, Accordion } from 'flowbite-svelte';
 
-	import ImageDisplay from '$lib/components/ImageDisplay.svelte';
+	// import ImageDisplay from '$lib/components/ImageDisplay.svelte';
 
 	import { image } from '$lib/components/store.js';
 
-	$: console.log({img: $image})
+//	$: console.log({img: $image})
 	 
 	 let imageContainer;
 </script>
