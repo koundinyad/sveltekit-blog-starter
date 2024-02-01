@@ -15,7 +15,7 @@ export default {
 			colors: {
 				black: "#1e1e1e",
 				cream: "#FEFFF6",
-				pink: "#FF2B84",
+				pink: "#fc4e51",
 			  },
 		}
 	},

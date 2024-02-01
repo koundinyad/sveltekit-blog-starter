@@ -1,30 +1,19 @@
 <slot></slot>
 
-
 <script>
     import { image } from '$lib/components/store.js';
-    
-    export let slug
 
-    console.log(slug)
+    export let slug;
   
     let images = [];
     let filteredImages = [];
-    const imageModules = import.meta.glob("./images/**/*.jpg"); 
-
-    const staticModules = import.meta.glob("../*.{jpg,jpeg,png,gif}");
-    // import.meta.glob('../static/')
-
-    for (const path in staticModules)
-    imageModules[path]().then((mod) => {
-        console.log("image", path, mod)
-    })
+    const imageModules = import.meta.glob("./images/**/*.{jpg,jpeg,png,gif}"); 
 
     const loadImageData = async (modulePath) => {
       const imageName = modulePath.split('/').pop().split('.')[0]; // Extract the filename without extension
       const altText = imageName.replace(/_/g, ' '); // Replace underscores with spaces
   
-      const { default: imageUrl } = await imageModules[modulePath]();
+      // const { default: imageUrl } = await imageModules[modulePath]();
   
       return { src: modulePath, alt: altText };
     };
@@ -47,10 +36,10 @@
     }
   </script>
 
-<div class="grid grid-cols-3">
+<div class="grid grid-cols-3 border border-black divide-x divide-black ">
     {#if filteredImages.length > 0}
       {#each filteredImages as { src, alt }}
-        <div class="border border-black h-[100px] flex items-center" on:mouseenter={() => displayImage(src)}>
+        <div class="h-[50px] md:h-[100px] flex items-center hover:bg-pink font-sans" on:mouseenter={() => displayImage(src)} on:click={() => displayImage(src)}>
             <p class="m-auto text-center">{alt}</p>
         </div>
       {/each}
