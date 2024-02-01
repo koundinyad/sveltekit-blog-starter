@@ -12,7 +12,7 @@
 	 let imageContainer;
 </script>
 
-<div id="container" class="h-vh px-4 py-6 md:px-8 md:py-6">
+<div id="container" class="px-4 py-6 md:px-8 md:py-6">
 	<div class="grid auto-rows-min gap-8 md:grid-cols-2 md:auto-cols-min md:gap-0">
 		<section>
 			<h1 class="title font-serif mb-2 md:mb-6">
@@ -59,9 +59,11 @@
 				{/each}
 			  </Accordion>
 		</section>
-		<section class="md:justify-self-start">
+
+		<section class="md:justify-self-start md:fixed md:bottom-2">
 			<img src={$image} class="p-4 border border-black w-full max-h-[400px] md:w-[500px] md:max-h-[500px] md:mt-20"/>
 		</section>
+
 		<section class="fixed bottom-0 w-96">
 			<div class="border-t border-black">
 				<p class="pt-2 block md:hidden max-w-[50ch]">
