@@ -1,8 +1,10 @@
 ---
 title: onoffon Radio
-date: 2023
-type: design, code
+year: 2023
+type: design, code, research
 slug: radio
+hidden: false
+date: 0222242
 layout: ./layout.svelte
 ---
 
