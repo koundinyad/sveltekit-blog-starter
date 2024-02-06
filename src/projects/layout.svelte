@@ -8,7 +8,7 @@
     let images = [];
     let filteredImages = [];
     // const imageModules = import.meta.glob("./images/**/*.{jpg,jpeg,png,gif,webp}");
-    const imageModules = import.meta.glob("/static/images/**/*.{jpg,jpeg,png,gif,webp}", { eager: true });
+    const imageModules = import.meta.glob("/static/images/**/*.{jpg,jpeg,png,gif,webp,webm}", { eager: true });
 
     // console.log(imageModules);
 
@@ -50,8 +50,8 @@
     {#if filteredImages.length > 0}
       {#each filteredImages as { src, alt }, index}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <div class="h-[50px] md:h-[100px] flex items-center font-sans border-r border-b border-black bg-cream hover:bg-pink {shouldApplyLeftBorder(index) ? 'border-l' : ''} {shouldApplyTopBorder(index) ? 'border-t' : ''}" on:mouseenter={() => displayImage(src)} on:click={() => displayImage(src)}>
-            <p class="m-auto text-center text-sm">{alt}</p>
+        <div class="h-[50px] md:h-[60px] flex items-center font-sans border-r border-b border-black bg-white {shouldApplyLeftBorder(index) ? 'border-l' : ''} {shouldApplyTopBorder(index) ? 'border-t' : ''}" on:mouseenter={() => displayImage(src)} on:click={() => displayImage(src)}>
+            <p class="m-auto text-center text-sm hover:blur-sm">{alt}</p>
         </div>
       {/each}
     {:else}
