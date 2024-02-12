@@ -1,8 +1,8 @@
 <script>
 	const projectModules = import.meta.glob('../projects/*.md', { eager: true });
 	const projects = Object.values(projectModules);
-	import { AccordionItem, Accordion } from 'flowbite-svelte';
-	import { image } from '$lib/components/store.js';
+	import { projectContent } from '$lib/components/store.js';
+	import { onMount } from 'svelte';
 
 	// Filter the post and order them by published date
 	const filteredProjects = projects
@@ -14,64 +14,110 @@
 				? 1
 				: 0
 		);
+
+	// Set the content of the project
+	function setProjectContent(project) {
+		$projectContent = project.default;
+	}
+
+	function setAlt(src) {
+		const imageName = src.split('/').pop().split('.')[0]; // Extract the filename without extension
+		const alt = imageName.replace(/_/g, ' '); // Replace underscores with spaces
+
+		return alt;
+	}
+
+	// Sticky Title: Intersection Observer
+	let currentProjectTitle = ""; // Initialize with an empty string
+	let firstProjectTitle = "";
+
+	onMount(() => {
+		// Manually set the currentProjectTitle to the title of the first project
+		if (filteredProjects.length > 0) {
+			firstProjectTitle = filteredProjects[0].metadata.title;
+			currentProjectTitle = filteredProjects[0].metadata.title;
+		}
+		const io_options = {
+			root: null, // Intersection observer will observe the entire viewport
+			rootMargin: '10px 0px 0px 0px', // Adjust rootMargin as needed
+			threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 1.0],
+		};
+
+		const io_callback = (entries, observer) => {
+			entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				// console.log(entry.target.dataset.projectTitle + `${Math.floor(entry.intersectionRatio * 100)}%`);
+				// only update current title if 59% in viewport
+				if (Math.floor(entry.intersectionRatio * 100) >= 59) {
+					currentProjectTitle = entry.target.dataset.projectTitle;
+				}
+			} else {
+				console.log('Element is not intersecting:', entry.target.dataset.projectTitle);
+				
+			}
+			});
+		};
+
+		const io_observer = new IntersectionObserver(io_callback, io_options);
+
+		const projectContainers = document.querySelectorAll('.projectContainer');
+		projectContainers.forEach(element => {
+			io_observer.observe(element);
+		});
+
+		return () => io_observer.disconnect();
+	});
+
 </script>
 
-<div id="container" class="px-4 py-6 md:px-8 md:py-6">
-	<div class="grid auto-rows-min gap-8 md:grid-cols-2 md:auto-cols-min md:gap-0">
-		<section>
-			<h1 class="title font-serif mb-2 md:mb-6">
-				April Chu
-			</h1>
-			<div class="about max-w-[50ch]">
-				<p>
-					Design, code, etc. <br/>
-					Based in London by way of California and Taipei. <br/>
-					Interested in alternative media and re-enchanting the web. 
-				</p>
-				<p class="hidden md:block">
-					CONTACT <br/>
-					(email) hi@april.wiki <br/>
-					(insta) @in____april
-				</p>
+<div class="grid gap-4 md:grid-cols-12">
+	<!-- <section class="col-start-5 col-span-2 m-auto h-screen overflow-auto">
+		{#each filteredProjects as project} -->
+		<!-- <section class="sticky-container sticky">
+			<button class="sticky-content relative text-sm border-black hover:border-b active:border-b focus:border-b " on:mouseenter = {() => setProjectContent(project)} on:click = {() => setProjectContent(project)}>
+				{project.metadata.title}
+			</button> 
+		</section> -->
+		<!-- <div class="title-container sticky top-2/4 h-screen overflow-auto">
+			<div class="project-title relative h-screen overflow-contain text-sm">
+				{project.metadata.title}
 			</div>
-		</section>
+		</div>
+		{/each} -->
 
-		<section class="md:row-span-3">
-			<h2 class="text-sm mb-2 md:mb-6">Work</h2>
-			  <Accordion flush class="text-black" classActive="text-black" classInactive="text-black">
-				{#each filteredProjects as project}
-					<AccordionItem class="border-0 text-black block text-sm" classInactive="border-0" classActive="border-0" borderSharedClass="border-0" paddingFlush="py-3">
-					<span slot="header" class="grid grid-cols-7 place-content-stretch border-t border-black pt-1">
-						<span class="col-span-3">
-							{project.metadata.title}
-						</span>
-						<span class="col-span-3">
-							{project.metadata.type}
-						</span>
-						<span class="col-span-1">
-							{project.metadata.year}
-						</span>
-					</span>
-					<div slot="arrowup" class="hidden w-0">
-					</div>
-					<div slot="arrowdown" class="hidden w-0">
-					</div>
-					<p class="font-serif">
-						<svelte:component this={project.default} />
-					</p>
-					</AccordionItem>
-				{/each}
-			  </Accordion>
-		</section>
+	<!-- </section> -->
 
-		<section class="flex flex-col md:justify-self-start md:fixed md:bottom-4">
-			<img src={$image} class="p-4 border border-black w-full flex-1 max-h-[500px] md: max-w-[500px] lg:max-h-[600px] md:mt-20"/>
-			<div class="block md:hidden border-t border-black mt-20">
-				<p class="pt-2 max-w-[50ch]">
-					CONTACT <br/>
-					(email) hi@april.wiki <br/>
-					(insta) @in____april
-				</p>
-		</section>
-	</div>
+	<!-- PROJECT TITLE	 -->
+	<section class="col-start-5 col-span-2 m-auto h-screen overflow-auto">
+		<div class="fixed text-center top-2/4 z-50">
+			<!-- Display the current project title -->
+			<h2 class="text-sm">{currentProjectTitle}</h2>
+			</div>
+	</section>
+
+	<section class="absolute h-screen right-8 w-8/12">
+		<!-- Each project section -->
+		{#each filteredProjects as project}
+
+		<div class="projectContainer h-min overflow-auto" data-project-title={project.metadata.title}>
+			<a href={project.metadata.slug}>
+				<div class="projectContent h-screen overflow-contain text-sm">
+					<!-- set the cover photo for the project, if it exists -->
+					{#if project.metadata.cover}
+						<img src={project.metadata.cover.replace(/^\/static/, '')} alt={`${project.metadata.title} ${setAlt(project.metadata.cover)}`}>
+					{:else}
+						<img src="/images/default.webp" alt="placeholder">
+					{/if}
+				</div>
+			</a>
+		</div>
+		{/each}
+	</section>
+
+	<!-- PROJECT CONTENTS -->
+	<section class="col-start-7 col-span-6 h-screen overflow-auto">
+		<div class="overscroll-contain">
+			<svelte:component this={ $projectContent } />
+		</div>
+	</section>
 </div>

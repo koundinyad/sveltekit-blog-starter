@@ -6,6 +6,7 @@ slug: radio
 hidden: false
 date: 0202242
 layout: ./layout.svelte
+cover: /static/images/auto-sheep/(2)_site:_home.gif
 ---
 
 _onoffon radio_ is a handmade, micro-radio not bounded by location, audience, or contributors. Sometimes on, sometimes off, the radio holds space for discussion, casual publishing, knowledge sharing, audio-making, and sonic experimentation.

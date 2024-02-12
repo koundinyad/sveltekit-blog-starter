@@ -11,13 +11,19 @@ export default {
 			sans: ['"Kosugi Maru"', "sans-serif"],
 			serif: ['IPAMincho', "serif"],
 		  },
+
 		extend: {
 			colors: {
 				black: "#1e1e1e",
 				cream: "#FEFFF6",
 				pink: "#fc4e51",
 			  },
+			  fontSize: {
+				'xs': '0.7rem',     // Extra extra small font size
+			},
 		}
+
 	},
 	plugins: []
 };
+
