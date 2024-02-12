@@ -1,8 +1,11 @@
+<!-- PROJECT LAYOUT -->
 <script>
     import { image } from '$lib/components/store.js';
     
     export let title;
+    export let year;
     export let slug;
+    export let type;
   
     let images = [];
     let filteredImages = [];
@@ -32,40 +35,36 @@
       }
   </script>
 
-<div id="container" class="absolute px-4 py-0 md:px-8 md:py-0 h-screen w-full">
-	<div class="grid gap-4 md:grid-cols-12">
-    <!-- TITLE -->
-    <section>
-      <h1 class="fixed top-2/4 text-sm mb-2 md:mb-6">
-        <a href="/">April Chu</a>
-      </h1>
-    </section>
-
+<div id="container" class="absolute px-4 py-0 h-screen w-full">
+	<div class="grid gap-x-8 h-screen md:grid-cols-12 md:grid-rows-6 relative">
     <!-- PROJECT -->
     <section class="col-start-5 col-span-2">
-      <div class="fixed text-center top-2/4">
+      <div class="fixed top-1/2">
         <!-- Display the current project title -->
         <h2 class="text-sm">{title}</h2>
-        <!-- Display the project description -->
       </div>
     </section>
 
     <!-- DESCRIPTION -->
-    <section class="col-start-4 col-span-3">
-      <div class="fixed w-3/12 top-2/4 mt-12">
+    <section class="col-start-0 row-start-6 col-span-2 flex flex-col justify-end"> 
+      <div class="fixed bottom-0 w-[20 ch]">
+        <p class="mb-0 text-xs">Year: {year}</p>
+        <p class="text-xs">Role: {type}</p>
+      </div>
+    </section>
+
+    <section class="col-start-3 col-span-4 row-start-6 flex flex-col justify-end"> 
+      <div class="fixed bottom-0 w-[40ch]">
         <slot></slot>
-    </div>
+      </div>
     </section>
 
     <!-- IMAGES -->
-    <div class="col-start-8 col-span-5">
+    <div class="col-start-7 col-span-6">
       {#if filteredImages.length > 0}
         {#each filteredImages as { src, alt }, index}
         <div class="mt-0">
           <img class="flex items-start object-cover md:w-full " src={src.replace(/^\/static/, '')} alt={alt}>
-          <!-- <div class="font-serif w-full mt-4  border-b border-black">
-            <p class="text-xs mb-1 font-sans">{alt}</p>
-          </div> -->
         </div>
         {/each}
       {:else}

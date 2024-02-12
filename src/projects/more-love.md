@@ -6,7 +6,7 @@ slug: more-love
 hidden: false
 date: 0202241
 layout: ./layout.svelte
-cover: /static/images/auto-sheep/(1)_logo.gif
+cover: /static/images/radio/computer.png
 ---
 
 MORE LOVE is a private display of affection on the Internet. Made with love with P5.js and Teachable Machine, MORE LOVE translates gestures into virtual love messages. A webpiece to think about quieter and more loving interactions on the Internet.

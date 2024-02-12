@@ -1,3 +1,4 @@
+<!-- HOME -->
 <script>
 	const projectModules = import.meta.glob('../projects/*.md', { eager: true });
 	const projects = Object.values(projectModules);
@@ -51,10 +52,7 @@
 				if (Math.floor(entry.intersectionRatio * 100) >= 59) {
 					currentProjectTitle = entry.target.dataset.projectTitle;
 				}
-			} else {
-				console.log('Element is not intersecting:', entry.target.dataset.projectTitle);
-				
-			}
+			} 
 			});
 		};
 
@@ -70,54 +68,32 @@
 
 </script>
 
-<div class="grid gap-4 md:grid-cols-12">
-	<!-- <section class="col-start-5 col-span-2 m-auto h-screen overflow-auto">
-		{#each filteredProjects as project} -->
-		<!-- <section class="sticky-container sticky">
-			<button class="sticky-content relative text-sm border-black hover:border-b active:border-b focus:border-b " on:mouseenter = {() => setProjectContent(project)} on:click = {() => setProjectContent(project)}>
-				{project.metadata.title}
-			</button> 
-		</section> -->
-		<!-- <div class="title-container sticky top-2/4 h-screen overflow-auto">
-			<div class="project-title relative h-screen overflow-contain text-sm">
-				{project.metadata.title}
+<div id="container" class="absolute px-4 py-0 h-screen w-full">
+	<div class="grid gap-x-8 h-screen md:grid-cols-12 md:grid-rows-6 relative">
+		<!-- PROJECT TITLE	 -->
+		<section class="col-start-5 col-span-2 row-start-4">
+			<div class="fixed top-1/2 text-sm z-50">
+				<h2 class="text-sm text-white">{currentProjectTitle}</h2>
 			</div>
-		</div>
-		{/each} -->
-
-	<!-- </section> -->
-
-	<!-- PROJECT TITLE	 -->
-	<section class="col-start-5 col-span-2 m-auto h-screen overflow-auto">
-		<div class="fixed text-center top-2/4 z-50">
-			<!-- Display the current project title -->
-			<h2 class="text-sm">{currentProjectTitle}</h2>
+		</section>
+	
+		<!-- PROJECT COVER IMAGE -->
+		<section class="col-start-2 col-span-10 row-start-1">
+			<!-- Each project section -->
+			{#each filteredProjects as project}
+			<div class="projectContainer h-min overflow-auto" data-project-title={project.metadata.title}>
+				<a href={project.metadata.slug}>
+					<div class="projectContent h-screen overflow-contain text-sm">
+						<!-- set the cover photo for the project, if it exists -->
+						{#if project.metadata.cover}
+							<img src={project.metadata.cover.replace(/^\/static/, '')} alt={`${project.metadata.title} ${setAlt(project.metadata.cover)}`}>
+						{:else}
+							<img src="/images/default.webp" alt="placeholder">
+						{/if}
+					</div>
+				</a>
 			</div>
-	</section>
-
-	<section class="absolute h-screen right-8 w-8/12">
-		<!-- Each project section -->
-		{#each filteredProjects as project}
-
-		<div class="projectContainer h-min overflow-auto" data-project-title={project.metadata.title}>
-			<a href={project.metadata.slug}>
-				<div class="projectContent h-screen overflow-contain text-sm">
-					<!-- set the cover photo for the project, if it exists -->
-					{#if project.metadata.cover}
-						<img src={project.metadata.cover.replace(/^\/static/, '')} alt={`${project.metadata.title} ${setAlt(project.metadata.cover)}`}>
-					{:else}
-						<img src="/images/default.webp" alt="placeholder">
-					{/if}
-				</div>
-			</a>
-		</div>
-		{/each}
-	</section>
-
-	<!-- PROJECT CONTENTS -->
-	<section class="col-start-7 col-span-6 h-screen overflow-auto">
-		<div class="overscroll-contain">
-			<svelte:component this={ $projectContent } />
-		</div>
-	</section>
+			{/each}
+		</section>
+	</div>
 </div>
