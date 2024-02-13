@@ -68,25 +68,25 @@
 
 </script>
 
-<div id="container" class="absolute px-4 py-0 h-screen w-full">
-	<div class="grid gap-x-8 h-screen md:grid-cols-12 md:grid-rows-6 relative">
+<!-- <div id="container" class="absolute px-4 h-screen w-full">
+	<div class="grid gap-x-2 md:gap-x-8 grid-cols-4 md:grid-cols-12 md:grid-rows-6 h-screen relative"> -->
 		<!-- PROJECT TITLE	 -->
-		<section class="col-start-5 col-span-2 row-start-4">
-			<div class="fixed top-1/2 text-sm z-50">
-				<h2 class="text-sm text-white">{currentProjectTitle}</h2>
+		<section class="col-start-4 md:col-start-5 md:col-span-2 bg-blue-500 z-50">
+			<div class="fixed top-1/2">
+				<h2 class="text-white">{currentProjectTitle}</h2>
 			</div>
 		</section>
 	
 		<!-- PROJECT COVER IMAGE -->
-		<section class="col-start-2 col-span-10 row-start-1">
+		<section class=" absolute md:col-end-12 md:col-start-2 bg-yellow-500">
 			<!-- Each project section -->
 			{#each filteredProjects as project}
-			<div class="projectContainer h-min overflow-auto" data-project-title={project.metadata.title}>
+			<div class="projectContainer h-screen overflow-auto" data-project-title={project.metadata.title}>
 				<a href={project.metadata.slug}>
-					<div class="projectContent h-screen overflow-contain text-sm">
+					<div class="projectContent h-screen w-full">
 						<!-- set the cover photo for the project, if it exists -->
 						{#if project.metadata.cover}
-							<img src={project.metadata.cover.replace(/^\/static/, '')} alt={`${project.metadata.title} ${setAlt(project.metadata.cover)}`}>
+							<img class="object-cover w-screen h-full" src={project.metadata.cover.replace(/^\/static/, '')} alt={`${project.metadata.title} ${setAlt(project.metadata.cover)}`}>
 						{:else}
 							<img src="/images/default.webp" alt="placeholder">
 						{/if}
@@ -95,5 +95,5 @@
 			</div>
 			{/each}
 		</section>
-	</div>
-</div>
+	<!-- </div>
+</div> -->

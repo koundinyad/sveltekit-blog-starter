@@ -19,7 +19,7 @@ export default {
 				pink: "#fc4e51",
 			  },
 			  fontSize: {
-				'xs': '0.65rem',     // Extra extra small font size
+				'xs': '0.65rem', 
 				'sm': '0.8rem',
 			},
 		}

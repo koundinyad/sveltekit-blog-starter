@@ -41,22 +41,22 @@
   }
 
   h1 {
-    @apply text-base md:text-lg;
+    @apply text-sm leading-5;
   }
   h2 {
-    @apply text-base md:text-lg;
+    @apply text-sm leading-5;
   }
   h3 {
-    @apply text-base;
+    @apply text-sm leading-5;
   }
   h4 {
-    @apply text-base;
+    @apply text-sm leading-5;
   }
   h5 {
-    @apply text-base;
+    @apply text-sm;
   }
   h6 {
-    @apply text-base
+    @apply text-sm
   }
   a {
     @apply w-fit h-fit;

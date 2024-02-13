@@ -41,7 +41,7 @@
     <section class="col-start-5 col-span-2">
       <div class="fixed top-1/2">
         <!-- Display the current project title -->
-        <h2 class="text-sm">{title}</h2>
+        <h2>{title}</h2>
       </div>
     </section>
 
