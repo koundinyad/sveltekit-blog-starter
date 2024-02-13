@@ -5,7 +5,6 @@ type: code, design
 slug: more-love
 hidden: false
 date: 0202241
-layout: ./layout.svelte
 cover: /static/images/radio/computer.png
 ---
 

@@ -54,8 +54,8 @@
   }
 </script>
 
-<div on:mouseenter={toggleHover} on:mouseleave={toggleHover}>
-  <button class="text-left" on:click={openModal} on:mouseenter={openModal}>
+<div >
+  <button class="text-left" on:mouseenter={toggleHover} on:mouseleave={toggleHover} on:click={openModal} on:mouseenter={openModal}>
     <h2>
       {currentPageName} {isHovered ? '+' : '*'}
     </h2>

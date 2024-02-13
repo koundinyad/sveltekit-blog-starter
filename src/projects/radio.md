@@ -5,7 +5,6 @@ type: code, design, research
 slug: radio
 hidden: false
 date: 0202242
-layout: ./layout.svelte
 cover: /static/images/radio/computer.png
 ---
 

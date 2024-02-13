@@ -5,7 +5,6 @@ type: code, design
 slug: auto-sheep
 hidden: false
 date: 0204241
-layout: ./layout.svelte
 cover: /static/images/radio/computer.png
 ---
 

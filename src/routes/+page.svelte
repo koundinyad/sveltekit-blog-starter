@@ -71,7 +71,7 @@
 <!-- <div id="container" class="absolute px-4 h-screen w-full">
 	<div class="grid gap-x-2 md:gap-x-8 grid-cols-4 md:grid-cols-12 md:grid-rows-6 h-screen relative"> -->
 		<!-- PROJECT TITLE	 -->
-		<section class="col-start-4 md:col-start-5 md:col-span-2 bg-blue-500 z-50">
+		<section class="col-start-4 md:col-start-5 md:col-span-2 z-50">
 			<div class="fixed top-1/2">
 				<h2 class="text-white">{currentProjectTitle}</h2>
 			</div>

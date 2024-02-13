@@ -20,8 +20,7 @@ const config = {
 		mdsvex({
 			extensions: ['.md', '.svx'],
 			remarkPlugins: [relativeImages],
-			layout: "./src/projects/layout.svelte"
-			
+			// layout: "./src/routes/[slug]/+layout.svelte"
 		})
 	],
 	vitePlugin: {
