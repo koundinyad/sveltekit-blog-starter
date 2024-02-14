@@ -30,7 +30,7 @@
 		<!-- TITLE -->
 		<section class="col-start-1 z-50">
 			<h1 class="fixed top-1/2 md:text-black {isAboutPage ? 'text-black' : 'text-white'}">
-				<a href="/">April Chu</a>
+				<a href="/" class="hover:blur-sm">April Chu</a>
 			</h1>
 		</section>
 

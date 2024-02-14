@@ -1,10 +1,11 @@
 ---
 title: Autonomous Sheep
 year: 2024
-type: code, design
+type: Code, Design
 slug: auto-sheep
 hidden: false
 date: 0204241
+link: https://autonomous-sheep.com
 cover: /static/images/radio/computer.png
 ---
 

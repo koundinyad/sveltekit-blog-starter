@@ -1,10 +1,11 @@
 ---
 title: onoffon radio
 year: 2023
-type: code, design, research
+type: Code, Design, Research
 slug: radio
 hidden: false
 date: 0202242
+link: https://www.radioo.space
 cover: /static/images/radio/computer.png
 ---
 
