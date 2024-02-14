@@ -6,7 +6,7 @@ slug: radio
 hidden: false
 date: 0202242
 link: https://www.radioo.space
-cover: /static/images/cover/onoffon.webp
+cover: /static/images/cover/onoffon_center.webp
 ---
 
 _onoffon radio_ is a handmade, micro-radio not bounded by location, audience, or contributors. Sometimes on, sometimes off, the radio holds space for discussion, casual publishing, knowledge sharing, audio-making, and sonic experimentation.
