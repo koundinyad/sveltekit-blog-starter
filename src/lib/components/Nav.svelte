@@ -55,18 +55,16 @@
 	}
 </script>
 
-<div>
+
 	<button
-		class="text-left p-0"
+		class="text-left p-0 m-0 text-sm"
 		on:mouseenter={toggleHover}
 		on:mouseleave={toggleHover}
 		on:click={openModal}
 		on:mouseenter={openModal}
 	>
-		<h2>
 			{currentPageName}
 			{isHovered ? '+' : '*'}
-		</h2>
 	</button>
 	{#if showModal}
 		<div
@@ -85,4 +83,4 @@
 			</nav>
 		</div>
 	{/if}
-</div>
+

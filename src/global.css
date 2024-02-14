@@ -8,6 +8,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+  /* border: 1px black dotted; */
 }
 
 @font-face {
@@ -59,7 +60,7 @@
     @apply text-sm
   }
   a {
-    @apply w-fit h-fit;
+    @apply w-fit h-fit leading-5 text-sm;
   }
   img {
     @apply w-full h-full object-cover;

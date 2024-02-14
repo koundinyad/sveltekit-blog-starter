@@ -2,7 +2,6 @@
 <script>
 	const projectModules = import.meta.glob('../projects/*.md', { eager: true });
 	const projects = Object.values(projectModules);
-	import { projectContent } from '$lib/components/store.js';
 	import { onMount } from 'svelte';
 
 	// Filter the post and order them by published date
@@ -15,11 +14,6 @@
 				? 1
 				: 0
 		);
-
-	// Set the content of the project
-	function setProjectContent(project) {
-		$projectContent = project.default;
-	}
 
 	function setAlt(src) {
 		const imageName = src.split('/').pop().split('.')[0]; // Extract the filename without extension
@@ -67,32 +61,37 @@
 
 		return () => io_observer.disconnect();
 	});
+
+	let showCard = false;
+
+	function toggleCard() {
+		showCard = !showCard;
+	}
 </script>
 
-<!-- <div id="container" class="absolute px-4 h-screen w-full">
-	<div class="grid gap-x-2 md:gap-x-8 grid-cols-4 md:grid-cols-12 md:grid-rows-6 h-screen relative"> -->
 <!-- PROJECT TITLE	 -->
-<section class="col-start-4 md:col-start-5 md:col-span-2 z-50">
+<section class="col-start-4 md:col-start-5 md:col-span-2 z-20">
 	<div class="fixed top-1/2">
-		<a href={currentProjectSlug} class="text-white text-sm hover:blur-sm">{currentProjectTitle}</a>
+		<a href={currentProjectSlug} class="text-sm leading-5 hover:blur-sm">{currentProjectTitle}</a>
 	</div>
 </section>
 
 <!-- PROJECT COVER IMAGE -->
-<section class=" absolute md:col-end-12 md:col-start-2 bg-black">
+<!-- <section class=" absolute md:col-end-12 md:col-start-2 bg-black"> -->
+<section class="col-start-1 col-span-4 md:col-start-8 md:col-span-6">
 	<!-- Each project section -->
 	{#each filteredProjects as project}
 		<div
-			class="projectContainer h-screen overflow-auto"
+			class="projectContainer overflow-auto"
 			data-project-title={project.metadata.title}
 			data-project-slug={project.metadata.slug}
 		>
 			<a href={project.metadata.slug}>
-				<div class="projectCpnontent h-screen w-full">
+				<div class="projectContent h-screen w-full flex">
 					<!-- set the cover photo for the project, if it exists -->
 					{#if project.metadata.cover}
 						<img
-							class="object-cover w-screen h-full"
+							class="object-cover w-screen h-[250px] md:h-[350px] self-end md:self-center"
 							src={project.metadata.cover.replace(/^\/static/, '')}
 							alt={`${project.metadata.title} ${setAlt(project.metadata.cover)}`}
 						/>
@@ -104,5 +103,3 @@
 		</div>
 	{/each}
 </section>
-<!-- </div>
-</div> -->

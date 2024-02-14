@@ -50,14 +50,14 @@
 
 <section />
 <!-- PROJECT -->
-<section class="col-start-4 text-white md:text-black md:col-start-5 md:col-span-2 z-50">
+<section class="col-start-4 text-white md:text-black md:col-start-5 md:col-span-2 z-20">
 	<div class="fixed top-1/2">
 		<h2>{title}</h2>
 	</div>
 </section>
 
 <!-- DESCRIPTION -->
-<section class="hidden md:grid md:col-start-1 row-start-6 z-50">
+<section class="hidden md:grid md:col-start-5 row-start-6 z-20">
 	<div class="fixed md:bottom-0 w-[20ch] text-black mb-4">
 		{#if link}<a href={link} class="text-sm hover:blur-sm">Online →</a>{/if}
 		{#if year && type}<p class="mb-0">{year} * {type}</p>{/if}
@@ -66,9 +66,9 @@
 </section>
 
 <section
-	class="col-start-1 col-end-6 row-start-1 text-white md:text-black md:col-start-3 md:col-span-4 md:row-start-6 justify-end z-30"
+	class="col-start-1 col-end-6 row-start-1 text-white md:text-black md:col-start-1 md:col-span-4 md:row-start-6 justify-end z-30"
 >
-	<div class="fixed bottom-0 md:w-[32ch] lg:w-[40ch]">
+	<div class="fixed bottom-0 md:w-[32ch] lg:w-[44ch]">
 		<button on:click={toggleVisible} class="block text-left text-sm my-4 hover:blur-sm">
 			{visible ? 'Info -' : 'Info +'}
 		</button>
@@ -77,7 +77,7 @@
 				<svelte:component this={post.default} />
 			</div>
 
-			<div class="md:hidden fixed top-0 left-0 w-screen h-screen bg-white text-black z-50 p-4">
+			<div class="md:hidden fixed top-0 left-0 w-lvw h-screen bg-white/30 text-black z-30 p-4 backdrop-blur-xl">
 				<!-- PROJECT INFO BUTTON -->
 				<button on:click={toggleVisible} class="block text-left text-sm my-4 hover:blur-sm">
 					{visible ? 'Info -' : 'Info +'}
@@ -85,7 +85,7 @@
 				<!-- PROJECT INFO -->
 				<svelte:component this={post.default} />
 
-				<div class="fixed bottom-0 text-black mb-4">
+				<div class="fixed bottom-0 text-black mb-4 z-20">
 					{#if link}<a href={link} class="text-sm hover:blur-sm">Online →</a>{/if}
 					{#if year && type}<p class="mb-0">{year} * {type}</p>{/if}
 				</div>
