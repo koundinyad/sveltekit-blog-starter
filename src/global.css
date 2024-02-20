@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,64 +12,63 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-  /* border: 1px black dotted; */
+	/* border: 1px black dotted; */
 }
 
-@font-face {
-  font-family: "IPAMincho";
-  src:
-    url("../static/fonts/IPAMincho_Regular.ttf") format("ttf");
-  font-weight: normal;
-  font-style: normal;
-  /* font-display: swap; */
-}
+/* @font-face {
+	font-family: 'IPAMincho';
+	src: url('../static/fonts/IPAMincho_Regular.ttf') format('truetype'),
+		url('../static/fonts/IPAMincho_Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+} */
 
 @layer base {
-  html::view-transition-old() {
-    animation-name: -ua-view-transition-fade-out;
-    animation-duration: inherit;
-    animation-fill-mode: inherit;
-  }
+	html::view-transition-old() {
+		animation-name: -ua-view-transition-fade-out;
+		animation-duration: inherit;
+		animation-fill-mode: inherit;
+	}
 
-  html::view-transition-new() {
-    animation-name: -ua-view-transition-fade-in;
-    animation-duration: inherit;
-    animation-fill-mode: inherit;
-  }
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 1s;
-  }
+	html::view-transition-new() {
+		animation-name: -ua-view-transition-fade-in;
+		animation-duration: inherit;
+		animation-fill-mode: inherit;
+	}
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 1s;
+	}
 
-  body {
-    @apply bg-white text-black overflow-y-scroll font-serif;
-  }
+	body {
+		@apply bg-white text-black overflow-y-scroll font-sans;
+	}
 
-  h1 {
-    @apply text-sm leading-5;
-  }
-  h2 {
-    @apply text-sm leading-5;
-  }
-  h3 {
-    @apply text-sm leading-5;
-  }
-  h4 {
-    @apply text-sm leading-5;
-  }
-  h5 {
-    @apply text-sm;
-  }
-  h6 {
-    @apply text-sm
-  }
-  a {
-    @apply w-fit h-fit leading-5 text-sm;
-  }
-  img {
-    @apply w-full h-full object-cover;
-  }
-  p {
-    @apply mb-4 leading-5 text-sm;
-  }
+	h1 {
+		@apply text-sm leading-5;
+	}
+	h2 {
+		@apply text-sm leading-5;
+	}
+	h3 {
+		@apply text-sm leading-5;
+	}
+	h4 {
+		@apply text-sm leading-5;
+	}
+	h5 {
+		@apply text-sm;
+	}
+	h6 {
+		@apply text-sm;
+	}
+	a {
+		@apply w-fit h-fit leading-5 text-sm;
+	}
+	img {
+		@apply w-full h-full object-cover;
+	}
+	p {
+		@apply mb-4 leading-5 text-sm;
+	}
 }
