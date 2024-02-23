@@ -36,7 +36,7 @@
 
 		<!-- MENU -->
 		<section class="col-start-2 md:col-start-4 z-20">
-			<div class="fixed top-1/2 md:text-black{ !isHomePage && !isAboutPage ? 'text-white' : 'text-black' }" >
+			<div class="fixed top-1/2 md:text-black { !isHomePage && !isAboutPage ? 'text-white' : 'text-black' }" >
 				<nav>
 					<Nav />
 				</nav>

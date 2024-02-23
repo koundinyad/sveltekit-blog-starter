@@ -91,7 +91,7 @@
 					<!-- set the cover photo for the project, if it exists -->
 					{#if project.metadata.cover}
 						<img
-							class="object-cover w-screen h-[250px] md:h-[350px] self-end md:self-center"
+							class="object-cover w-screen h-[250px] md:h-[350px] mb-4 md:mb-0 self-end md:self-center"
 							src={project.metadata.cover.replace(/^\/static/, '')}
 							alt={`${project.metadata.title} ${setAlt(project.metadata.cover)}`}
 						/>
