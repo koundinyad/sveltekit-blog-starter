@@ -82,7 +82,7 @@
 	<!-- Each project section -->
 	{#each filteredProjects as project}
 		<div
-			class="projectContainer overflow-auto"
+			class="projectContainer overflow-auto text-white md:text-black"
 			data-project-title={project.metadata.title}
 			data-project-slug={project.metadata.slug}
 		>
