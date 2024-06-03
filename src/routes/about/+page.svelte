@@ -3,17 +3,14 @@
 	<div class="fixed top-1/2 w-[20ch] md:w-[40ch]">
 		<p>Design, code, etc.</p>
 		<p>
-			Based in London by way of California and Taipei. Interested in alternative media and
-			re-enchanting the web.
+			Based in London by way of California and Taipei.
 		</p>
 
 		<div class="md:hidden">
 			<p>Contact</p>
 			<p>
 				(email) <a href="mailto:hi@april.wiki" class="hover:blur-sm">hi@april.wiki</a>
-				(insta) <a href="https://www.instagram.com/in____april/" class="hover:blur-sm"
-					>@in____april</a
-				>
+				(cv) <a href="https://read.cv/aprlc" class="hover:blur-sm">@read.cv/aprlc</a>
 			</p>
 		</div>
 	</div>
@@ -27,8 +24,8 @@
 			<a href="mailto:hi@april.wiki" class="hover:blur-sm">hi@april.wiki</a>
 		</p>
 		<p>
-			(insta)<br />
-			<a href="https://www.instagram.com/in____april/" class="hover:blur-sm">@in____april</a>
+			(cv)<br />
+			<a href="https://read.cv/aprlc" class="hover:blur-sm">@read.cv/aprlc</a>
 		</p>
 	</div>
 </section>

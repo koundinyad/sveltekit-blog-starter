@@ -3,6 +3,7 @@
 	// Importing site config
 	import { config } from '../../site.config';
 
+	// Get post data
 	export let data;
 	let { post } = data;
 
@@ -12,7 +13,7 @@
 	let type = post.metadata.type;
 	let link = post.metadata.link;
 
-	let visible = false;
+	let visible = true;
 
 	let images = [];
 	let filteredImages = [];
@@ -77,7 +78,9 @@
 				<svelte:component this={post.default} />
 			</div>
 
-			<div class="md:hidden fixed top-0 left-0 w-lvw h-screen bg-white/30 text-black z-30 p-4 backdrop-blur-xl">
+			<div
+				class="md:hidden fixed top-0 left-0 w-lvw h-screen bg-white/30 text-black z-30 p-4 backdrop-blur-xl"
+			>
 				<!-- PROJECT INFO BUTTON -->
 				<button on:click={toggleVisible} class="block text-left text-sm my-4 hover:blur-sm">
 					{visible ? 'Info -' : 'Info +'}

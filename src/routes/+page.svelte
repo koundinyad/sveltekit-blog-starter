@@ -87,11 +87,11 @@
 			data-project-slug={project.metadata.slug}
 		>
 			<a href={project.metadata.slug}>
-				<div class="projectContent h-screen w-full flex">
+				<div class="projectContent h-[80vh] w-full flex">
 					<!-- set the cover photo for the project, if it exists -->
 					{#if project.metadata.cover}
 						<img
-							class="object-cover w-screen h-[250px] md:h-[350px] mb-4 md:mb-0 self-end md:self-center"
+							class="object-cover w-screen h-[250px] md:h-[350px] rounded-lg mb-4 md:mb-0 self-end md:self-center"
 							src={project.metadata.cover.replace(/^\/static/, '')}
 							alt={`${project.metadata.title} ${setAlt(project.metadata.cover)}`}
 						/>

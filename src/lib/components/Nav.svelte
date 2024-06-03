@@ -64,7 +64,7 @@
 		on:mouseenter={openModal}
 	>
 			{currentPageName}
-			{isHovered ? '+' : '*'}
+			{isHovered ? '+' : '+'}
 	</button>
 	{#if showModal}
 		<div

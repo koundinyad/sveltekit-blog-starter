@@ -13,4 +13,4 @@ MORE LOVE is a private display of affection on the Internet. Made with love with
 
 Exhibited at the UAL Creative Computing Showcase. Originally a 2-channel interactive installation, consolidated into a web piece.
 
-<!-- [(Online →)](https://morelove.netlify.com) -->
+<!-- [(Online →)](https://morelove.netlify.app) -->
