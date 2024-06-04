@@ -11,24 +11,20 @@ export default {
 
 	theme: {
 		fontFamily: {
-			sans: ['"Kosugi Maru"', 'sans-serif'],
-			// serif: ['IPAMincho', "serif"],
-			serif: ['Nanum Myeongjo', 'serif'],
-			// sans: ["Gothic A1", 'sans-serif']
+			sans: ['"Fluxisch"', 'sans-serif']
 		},
 
 		extend: {
 			colors: {
-				black: '#1e1e1e',
+				black: '#272727',
 				cream: '#FEFFF6',
-				pink: '#fc4e51'
+				gray: '#c4c4c4',
 			},
 			fontSize: {
+				sm: '0.8rem',
 				xs: '0.65rem',
-				sm: '0.9rem'
 			}
 		}
 	},
-	plugins: []
 };
 

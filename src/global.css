@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap'); */
 
 @tailwind base;
 @tailwind components;
@@ -15,13 +15,26 @@
 	/* border: 1px black dotted; */
 }
 
-/* @font-face {
-	font-family: 'IPAMincho';
-	src: url('../static/fonts/IPAMincho_Regular.ttf') format('truetype'),
-		url('../static/fonts/IPAMincho_Regular.woff') format('woff');
+@font-face {
+	font-family: 'Fluxisch';
+	src: url('/fonts/FluxischElse-Regular.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-} */
+}
+
+@font-face {
+	font-family: 'Fluxisch';
+	src: url('/fonts/FluxischElse-Light.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fluxisch';
+	src: url('/fonts/FluxischElse-bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
 
 @layer base {
 	html::view-transition-old() {
@@ -45,7 +58,7 @@
 	}
 
 	h1 {
-		@apply text-sm leading-5;
+		@apply text-xl leading-5;
 	}
 	h2 {
 		@apply text-sm leading-5;
@@ -63,12 +76,21 @@
 		@apply text-sm;
 	}
 	a {
-		@apply w-fit h-fit leading-5 text-sm;
+		@apply w-fit h-fit leading-5;
 	}
 	img {
 		@apply w-full h-full object-cover;
 	}
 	p {
-		@apply mb-4 leading-5 text-sm;
+		@apply mb-4 leading-4 text-sm;
 	}
+
+	/* CUSTOM SECTION HEADING STYLE */
+	.grid_template {
+    @apply grid md:grid-cols-12 md:gap-4 grid-cols-6 gap-2 md:mt-24 mt-12;
+  }
 }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.3em; vertical-align: super;}
+sub { bottom: -0.25em; vertical-align: sub;}
