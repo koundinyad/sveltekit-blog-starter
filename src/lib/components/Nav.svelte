@@ -22,18 +22,18 @@
 		}
 	];
 
-	// Check url as soon as pages update
-	afterUpdate(() => {
-		currentPage = $page.url.pathname;
-		currentPageName = getPageName(currentPage);
-		console.log(currentPage);
-	});
+	// // Check url as soon as pages update
+	// afterUpdate(() => {
+	// 	currentPage = $page.url.pathname;
+	// 	currentPageName = getPageName(currentPage);
+	// 	console.log(currentPage);
+	// });
 
-	function getPageName(url) {
-		const menuItem = menus.find((menu) => menu.href === url);
-		console.log(menuItem);
-		return menuItem ? menuItem.name : 'Menu';
-	}
+	// function getPageName(url) {
+	// 	const menuItem = menus.find((menu) => menu.href === url);
+	// 	console.log(menuItem);
+	// 	return menuItem ? menuItem.name : 'Menu';
+	// }
 </script>
 
 <nav class="text-sm">

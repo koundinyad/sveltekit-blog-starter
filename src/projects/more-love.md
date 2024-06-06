@@ -5,7 +5,7 @@ type: Code, Design
 slug: more-love
 hidden: false
 date: 0202241
-link: https://morelove.netlify.com
+link: https://morelove.netlify.app
 cover: /static/images/cover/more_love_center.webp
 featured: no
 ---

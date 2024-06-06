@@ -7,7 +7,7 @@ export default {
 
 	plugins: [require('flowbite/plugin')],
 
-	darkMode: 'class',
+	darkMode: 'selector',
 
 	theme: {
 		fontFamily: {
@@ -18,13 +18,13 @@ export default {
 			colors: {
 				black: '#272727',
 				cream: '#FEFFF6',
-				gray: '#c4c4c4',
+				gray: '#c4c4c4'
 			},
 			fontSize: {
 				sm: '0.8rem',
-				xs: '0.65rem',
+				xs: '0.65rem'
 			}
 		}
-	},
+	}
 };
 
