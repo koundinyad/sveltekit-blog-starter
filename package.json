@@ -30,10 +30,12 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"embla-carousel-auto-height": "^8.1.3",
-		"embla-carousel-autoplay": "^8.1.3",
-		"embla-carousel-svelte": "^8.1.3",
+		"embla-carousel": "^8.1.4",
+		"embla-carousel-auto-height": "^8.1.4",
+		"embla-carousel-autoplay": "^8.1.4",
+		"embla-carousel-svelte": "^8.1.4",
 		"mdsvex": "^0.10.6",
-		"mdsvex-relative-images": "^1.0.3"
+		"mdsvex-relative-images": "^1.0.3",
+		"svelte-light-carousel": "^1.0.5"
 	}
 }

@@ -5,12 +5,27 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  embla-carousel:
+    specifier: ^8.1.4
+    version: 8.1.4
+  embla-carousel-auto-height:
+    specifier: ^8.1.4
+    version: 8.1.4(embla-carousel@8.1.4)
+  embla-carousel-autoplay:
+    specifier: ^8.1.4
+    version: 8.1.4(embla-carousel@8.1.4)
+  embla-carousel-svelte:
+    specifier: ^8.1.4
+    version: 8.1.4(svelte@3.59.1)
   mdsvex:
     specifier: ^0.10.6
     version: 0.10.6(svelte@3.59.1)
   mdsvex-relative-images:
     specifier: ^1.0.3
     version: 1.0.3
+  svelte-light-carousel:
+    specifier: ^1.0.5
+    version: 1.0.5(svelte@3.59.1)
 
 devDependencies:
   '@sveltejs/adapter-auto':
@@ -1111,6 +1126,44 @@ packages:
   /electron-to-chromium@1.4.468:
     resolution: {integrity: sha512-6M1qyhaJOt7rQtNti1lBA0GwclPH+oKCmsra/hkcWs5INLxfXXD/dtdnaKUYQu/pjOBP/8Osoe4mAcNvvzoFag==}
     dev: true
+
+  /embla-carousel-auto-height@8.1.4(embla-carousel@8.1.4):
+    resolution: {integrity: sha512-qnahRVawbJQkYkE8rH+vQaOJAu+qszRt6Iszk098FhwV7OWiqdPy4ugVzXl1BjXBQwfAdvNV+HnwPEyzSjA4nA==}
+    peerDependencies:
+      embla-carousel: 8.1.4
+    dependencies:
+      embla-carousel: 8.1.4
+    dev: false
+
+  /embla-carousel-autoplay@8.1.4(embla-carousel@8.1.4):
+    resolution: {integrity: sha512-lsQkKiU5sIVg5vuaWo6BTzQT+7Z6AEMnCIQho4bS6KFeBE8FtsL/HOmtLx7fLu2reH6keJ1vNmLn6L/w9CQj+Q==}
+    peerDependencies:
+      embla-carousel: 8.1.4
+    dependencies:
+      embla-carousel: 8.1.4
+    dev: false
+
+  /embla-carousel-reactive-utils@8.1.4(embla-carousel@8.1.4):
+    resolution: {integrity: sha512-qkovXTiNaURsnYhJxUBsDx9YV6crxLIZwfO6jIFSKKn6ZZE1JVeZAvy/UsiyNxiFikVrO76iquvD6uBHI9YD8w==}
+    peerDependencies:
+      embla-carousel: 8.1.4
+    dependencies:
+      embla-carousel: 8.1.4
+    dev: false
+
+  /embla-carousel-svelte@8.1.4(svelte@3.59.1):
+    resolution: {integrity: sha512-Inc//+BMN6aNKeyUwIBfT94yYtDzIQLWZeOZTtL9soetLsHCffeYXFAXCP0KNb7Ku9/s10YbsyfHL97PK5qCOQ==}
+    peerDependencies:
+      svelte: ^3.49.0 || ^4.0.0
+    dependencies:
+      embla-carousel: 8.1.4
+      embla-carousel-reactive-utils: 8.1.4(embla-carousel@8.1.4)
+      svelte: 3.59.1
+    dev: false
+
+  /embla-carousel@8.1.4:
+    resolution: {integrity: sha512-AMe40ZpyLpztfNnGQtMWVIgYdcBoY2MuQttRwQ/xqSPC3UvDG2QF17CR5Efz4c8qEkno7pxdZFDRO2R11y6hRQ==}
+    dev: false
 
   /end-of-stream@1.4.4:
     resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}
@@ -2375,6 +2428,14 @@ packages:
     dependencies:
       svelte: 3.59.1
     dev: true
+
+  /svelte-light-carousel@1.0.5(svelte@3.59.1):
+    resolution: {integrity: sha512-l1Vhy1eyYJGPKwYu6S/7RbyFUneA/FDKtFVgUik2sNokJJYafKasFRuVY0znWpwzNyyvz9LGn6y9URyecDerdA==}
+    peerDependencies:
+      svelte: ^4.0.0
+    dependencies:
+      svelte: 3.59.1
+    dev: false
 
   /svelte-parse-markup@0.1.2(svelte@3.59.1):
     resolution: {integrity: sha512-DycY7DJr7VqofiJ63ut1/NEG92HrWWL56VWITn/cJCu+LlZhMoBkBXT4opUitPEEwbq1nMQbv4vTKUfbOqIW1g==}
