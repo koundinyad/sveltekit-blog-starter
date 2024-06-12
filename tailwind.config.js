@@ -24,7 +24,7 @@ export default {
 				sm: '0.8rem',
 				xs: '0.65rem'
 			}
-		}
+		},
 	}
 };
 

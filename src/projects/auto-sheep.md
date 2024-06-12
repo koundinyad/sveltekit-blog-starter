@@ -6,7 +6,7 @@ slug: auto-sheep
 hidden: false
 date: 0204241
 link: https://autonomous-sheep.com
-cover: /static/images/cover/autonomous_sheep_center.webp
+cover: /static/images/auto-sheep/(1)_logo.webp
 featured: yes
 ---
 

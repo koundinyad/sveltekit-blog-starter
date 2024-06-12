@@ -13,7 +13,7 @@
 			href: '#featured-work'
 		},
 		{
-			name: 'Work',
+			name: 'Clippings',
 			href: '#work'
 		},
 		{
@@ -37,9 +37,11 @@
 </script>
 
 <nav class="text-sm">
-	{#each menus as menu}
+	{#each menus as menu, index}
 		{#if menu.href !== $page.url.pathname}
-			<a href={menu.href} class="pr-2">{menu.name}</a>
+			<a href={menu.href} class="{index < menus.length - 1 ? 'pr-1' : ''} hover:link-hover">
+				{menu.name}{#if index < menus.length - 1},{/if}
+			</a>
 		{/if}
 	{/each}
 </nav>

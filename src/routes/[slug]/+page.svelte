@@ -62,7 +62,6 @@
 	<div class="fixed md:bottom-0 w-[20ch] text-black mb-4">
 		{#if link}<a href={link} class="text-sm hover:blur-sm">Online →</a>{/if}
 		{#if year && type}<p class="mb-0">{year} * {type}</p>{/if}
-		<!-- {#if type}<p class="mb-0">Role: {type}</p>{/if} -->
 	</div>
 </section>
 
@@ -98,7 +97,7 @@
 </section>
 
 <!-- IMAGES -->
-<div class="absolute md:grid md:col-start-7 md:col-span-6">
+<!-- <div class="absolute md:grid md:col-start-7 md:col-span-6">
 	{#if filteredImages.length > 0}
 		{#each filteredImages as { src, alt }, index}
 			<div class="mt-0 w-screen md:w-full">
@@ -108,4 +107,4 @@
 	{:else}
 		<p>No images to display</p>
 	{/if}
-</div>
+</div> -->
