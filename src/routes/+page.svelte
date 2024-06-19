@@ -138,8 +138,7 @@
 								<a
 									href={project.metadata.link}
 									target="_blank"
-									class="text-[0.5rem] px-[0.25rem] border border-black rounded-full ml-1 hover:link-hover" >Visit ↗</a
-								>
+									class="text-[0.5rem] px-[0.25rem] border border-black rounded-full ml-1 hover:link-hover" >Visit ↗</a>
 							{/if}
 						</div>
 						<!-- project details -->
@@ -181,9 +180,7 @@
 										<a
 											href={project.metadata.link}
 											target="_blank"
-											style="background-color:{getRandomColor()};"
-											class="text-xs px-2 rounded-full text-white ml-1" ><div class="hover:rotate-90 transition-all duration-100">↗</div></a
-										>
+											class="text-[0.5rem] px-[0.25rem] border border-black rounded-full ml-1 hover:link-hover" >Visit ↗</a>
 									{/if}
 									</div>
 									<!-- project details -->
@@ -208,9 +205,8 @@
 		</div>
 	</section>
 
-	<!-- CONTACT & COLOPHON-->
+	<!-- COLOPHON -->
 	<section class="grid_template">
-		<!-- colophon -->
 		<div class="md:col-start-10 md:col-span-2 col-start-4 col-span-3">
 			<p class="text-xs leading-3">
 				<sup class="text-gray">Colophon</sup>
