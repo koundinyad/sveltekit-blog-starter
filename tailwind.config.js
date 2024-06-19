@@ -21,7 +21,7 @@ export default {
 				gray: '#c4c4c4'
 			},
 			fontSize: {
-				sm: '0.8rem',
+				sm: '0.85rem',
 				xs: '0.65rem'
 			}
 		},

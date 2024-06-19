@@ -79,14 +79,18 @@
 		@apply mb-4 leading-4 text-sm;
 	}
 
-	/* GRID*/
-	.grid_template {
-   	 	@apply grid md:grid-cols-12 gap-4 grid-cols-6 md:mt-24 mt-12;
-  	}
-
-	.link-hover {
+	a:hover {
 		@apply tracking-widest transition-all duration-300 ease-in-out;
 	}
+
+	/* GRID*/
+	.grid_template {
+   	 	@apply grid md:grid-cols-12 gap-6 grid-cols-6 md:mt-24 mt-12;
+  	}
+
+	/* .link-hover {
+		@apply tracking-widest transition-all duration-300 ease-in-out;
+	} */
 }
 
 sub, sup { font-size: 80%; line-height: 0; position: relative; vertical-align: baseline; }

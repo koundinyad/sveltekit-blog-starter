@@ -9,7 +9,7 @@
 			href: '#about'
 		},
 		{
-			name: 'Featured',
+			name: 'Featured Work',
 			href: '#featured-work'
 		},
 		{

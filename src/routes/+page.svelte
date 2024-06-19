@@ -1,6 +1,7 @@
 <!-- HOME -->
 <script>
 	import { writable } from 'svelte/store';
+	import News from '$lib/components/News.svelte';
 	import Nav from "$lib/components/Nav.svelte";
 	import CarouselSingle from '$lib/components/CarouselSingle.svelte';
 	import Carousel from '$lib/components/Carousel.svelte';
@@ -84,28 +85,36 @@
 	})();
 </script>
 
+<!-- News popup -->
+<div class="absolute">
+	<News />
+</div>
+
 <div class="flex flex-col md:mx-4 mx-4">
 	<!-- TITLE & MENU -->
 	<section class="grid_template mt-12 md:mt-4 justify-end">
-		<p class="md:col-start-4 md:col-span-3 col-start-1 col-span-2 mb-0">
+		<p class="md:col-start-3 md:col-span-3 col-start-1 col-span-2 mb-0">
 			April Chu
 		</p>
-		<div class="md:col-end-10 md:col-span-3 col-start-3 col-span-6 place-self-end" >
+		<!-- <div class="md:col-end-10 md:col-span-3 col-start-3 col-span-6 place-self-end" >
 			<Nav />
-		</div>
-	</section>
-
-	<!-- ABOUT -->
-	<section class="grid_template" id="about">
-		<!-- <h4 class="md:col-start-5 col-start-2 text-gray mb-2">About</h4> -->
-		<div class="md:col-start-4 md:col-span-6 col-start-1 col-span-6">
-			<p class="text-xl md:text-2xl">
-				April is designer that works with code. With roots in web and brand, her practice is supplemented by research into alternative Internet & media cultures<sup>01</sup>. Currently based in London by way of Taipei and California. She holds a master’s from the Creative Computing Institute (UAL) and a bachelor’s from Wellesley College.
-			</p>
-		</div>
-		<div class="md:col-start-10 md:col-span-2 col-start-4 col-span-3 md:py-4">
+		</div> -->
+		<div class="md:col-start-7 md:col-span-4 col-start-2 col-span-5">
 			<p>
-				<sup>01</sup>Currently building an online radio. You can read about it here.
+				April is designer that works with code. With roots in web and brand, her practice is supplemented by research into alternative Internet & media cultures<sup>01</sup>. Based in London by way of Taipei and California. She holds a master’s from the Creative Computing Institute (UAL) and a bachelor’s from Wellesley College.
+			</p>
+			<div>
+				<p class="mb-0 text-gray">Find me elsewhere. Currently open for opportunities.</p>
+				<a href="mailto:hi@april.wiki" class="hover:link-hover text-sm">hi@april.wiki,&nbsp;</a>
+				<a href="https://read.cv/aprlc" class="hover:link-hover text-sm">read.cv,&nbsp;</a>
+				<a href="https://www.are.na/april-c" class="hover:link-hover text-sm"> are.na,&nbsp;</a>
+				<a href="https://read.cv/aprlc" class="hover:link-hover text-sm">insta</a>
+			</div>
+		</div>
+		<div class="md:col-start-10 md:col-span-2 col-start-4 col-span-3">
+			<p class="text-xs leading-3">
+				<sup>01</sup>
+				Currently building an online radio. You can read about it here.
 			</p>
 		</div>
 	</section>
@@ -113,40 +122,38 @@
 	<!-- FEATURED PROJECTS -->
 	<section class="grid_template" id="featured-work">
 		<!-- section title -->
-		<h4 class="md:col-start-5 col-span-4 text-gray mb-4 col-start-2">Featured Projects</h4>
+		<!-- <h4 class="md:col-start-2 col-span-4 text-gray mb-4 col-start-2">Featured Work</h4> -->
 		<!-- project block -->
 		{#each $allProjects as project}
 			{#if project.metadata.featured === 'yes'}
-				<!-- project title -->
-				<div class="md:col-start-4 md:col-span-8 col-start-1 col-span-6">
-					<div class="flex flex-row justify-between items-end">
-						<div class="flex flex-row">
-							<p class="text-lg md:text-xl mb-0">
+				<div class="md:col-start-3 md:col-span-3 col-start-1 col-span-6">
+					<div class="flex flex-col">
+						<div class="flex flex-row gap-2 content-end">
+							<!-- project title -->
+							<p class="mb-0">
 								{project.metadata.title}
 							</p>
+							<!-- project link -->
 							{#if project.metadata.link}
 								<a
 									href={project.metadata.link}
 									target="_blank"
-									style="background-color:{getRandomColor()};"
-									class="text-xs px-[0.5rem] rounded-full text-white ml-1 hover:link-hover" >Visit ↗</a
+									class="text-[0.5rem] px-[0.25rem] border border-black rounded-full ml-1 hover:link-hover" >Visit ↗</a
 								>
 							{/if}
 						</div>
-						<!-- project info -->
-						<p class="text-gray text-sm mb-0 hidden md:block">{project.metadata.type} ({project.metadata.year})</p>
+						<!-- project details -->
+						<p class="mb-2 text-gray">{project.metadata.type} ({project.metadata.year})</p>
 					</div>
-					<!-- sm: project info -->
-					<p class="text-gray text-sm mb-0 block md:hidden">{project.metadata.type} ({project.metadata.year})</p>
 				</div>
+					<!-- project blurb -->
+					<div class="md:col-start-7 md:col-span-4 col-start-2 col-span-5">
+						<svelte:component this={project.default}/>
+					</div>
 				<!-- images -->
-				<div class="md:col-start-1 md:col-span-12 col-start-1 col-span-6">
+				<div class="md:col-start-1 md:col-span-12 col-start-1 col-span-6 mb-24">
 					<Carousel images={project.images}></Carousel>
 					<!-- <img src={project.metadata.cover.replace(/^\/static/, '')} alt="hello"> -->
-				</div>
-				<!-- project details -->
-				<div class="md:col-start-4 md:col-span-4 col-start-2 col-span-5 mb-8 md:mb-24">
-					<svelte:component this={project.default} />
 				</div>
 			{/if}
 		{/each}
@@ -157,8 +164,8 @@
 		<!-- section title -->
 		<h4 class="md:col-start-5 text-gray mb-4 col-start-2 col-span-4">Clippings</h4>
 		<!-- project block -->
-		<div class="md:col-start-4 md:col-span-3 col-start-1 col-span-3">
-			<div class="flex gap-4">
+		<div class="md:col-start-3 md:col-span-8 col-start-1 col-span-6">
+			<div class="flex gap-4 col-span-3">
 				{#each $allProjects as project}
 					{#if project.metadata.featured === 'no'}
 						<div class="flex-1">
@@ -193,7 +200,6 @@
 								</div>
 								<!-- project details -->
 								<svelte:component this={project.default} />
-
 							</div>
 						</div>
 					{/if}
@@ -203,27 +209,15 @@
 	</section>
 
 	<!-- CONTACT & COLOPHON-->
-	<section class="grid_template" id="contact">
-		<!-- contact -->
-		<h4 class="md:col-start-5 md:col-span-2 text-gray md:row-start-1 col-start-2">Contact</h4>
-		<div class="md:col-start-4 md:col-span-3 col-start-1 col-span-6">
-			<p class="mb-0 text-sm">OPEN FOR PROJECTS</p>
-			<a href="mailto:hi@april.wiki" class="text-xl hover:link-hover">hi@april.wiki</a>
-			<p class="mt-4 mb-0">ELSEWHERE</p>
-			<div class="flex">
-				<a href="https://read.cv/aprlc" class="hover:link-hover text-xl">read.cv,&nbsp;</a>
-				<a href="https://www.are.na/april-c" class="hover:link-hover text-xl"> are.na,&nbsp;</a>
-				<a href="https://read.cv/aprlc" class="hover:link-hover text-xl">insta</a>
-			</div>
-		</div>
+	<section class="grid_template">
 		<!-- colophon -->
-		<h4 class="md:col-start-8 md:col-span-2 text-gray md:row-start-1 col-start-2 mt-12 md:mt-0">Colophon</h4>
-		<div class="md:col-start-7 md:col-span-3 col-start-1 col-span-6">
-		<p>
-			This website is hand-coded and maintained by myself. Built with SvelteKit. Type is set in Fluxish by OSP Foundry.
+		<div class="md:col-start-10 md:col-span-2 col-start-4 col-span-3">
+			<p class="text-xs leading-3">
+				<sup class="text-gray">Colophon</sup>
+				This website is hand-coded and maintained by myself with the help of KD. Built with SvelteKit. Type is set in Fluxish by OSP Foundry.
 			<br><br>
 			Last updated on June 12, 2024 with love. Thank you for visiting!
-		</p>
+			</p>
 		</div>
 	</section>
 </div>

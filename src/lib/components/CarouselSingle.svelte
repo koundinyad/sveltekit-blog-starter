@@ -21,7 +21,7 @@
             <button
                 {...a11y}
                 on:click={() => scrollTo(i)}
-                class={'rounded-full cursor-pointer transition-all w-2 h-2  aria-[selected="true"]:bg-[#CAC444] bg-[#85bfc8]'}
+                class={'rounded-full cursor-pointer transition-all w-1.5 h-1.5  aria-[selected="true"]:bg-black bg-gray'}
             />
 		{/each}
 	</div>
