@@ -23,7 +23,7 @@
         <div class="md:w-[300px] w-[250px] pt-4">
             <p class="text-xs leading-3">
                 [Currently building] <br>
-                A web app for talking a walk online w/ my friend <a href="https://koundinya.website/" target="_blank">KD</a>. Follow along on <a href="https://www.are.na/april-c/work-listlist" target="_blank">are.na</a>.
+                A web app for taking walks on the Internet w/ my friend <a href="https://koundinya.website/" target="_blank">KD</a>. Follow along on <a href="https://www.are.na/april-c/work-listlist" target="_blank">are.na</a>.
             </p>
             <p class="text-xs leaading-3">
                 [Recently read] <br>

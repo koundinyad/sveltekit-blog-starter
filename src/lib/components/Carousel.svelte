@@ -34,7 +34,7 @@
             <button
                 {...a11y}
                 on:click={() => scrollTo(i)}
-                class={'rounded-full cursor-pointer transition-all w-1.5 h-1.5 aria-[selected="true"]:bg-[#c5e618] bg-[#e7f6a1]'}
+                class={'rounded-full cursor-pointer transition-all w-1.5 h-1.5 aria-[selected="true"]:bg-darkGray bg-gray'}
             />
 		{/each}
 	</div>
