@@ -48,7 +48,7 @@
 	}
 
 	body {
-		@apply bg-white text-black overflow-y-scroll font-sans;
+		@apply bg-white text-darkGray overflow-y-scroll font-sans;
 	}
 
 	h1 {
@@ -88,9 +88,9 @@
    	 	@apply grid md:grid-cols-12 gap-6 grid-cols-6 md:mt-24 mt-12;
   	}
 
-	/* .link-hover {
+	.link-hover {
 		@apply tracking-widest transition-all duration-300 ease-in-out;
-	} */
+	}
 }
 
 sub, sup { font-size: 80%; line-height: 0; position: relative; vertical-align: baseline; }

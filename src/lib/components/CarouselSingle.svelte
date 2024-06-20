@@ -7,7 +7,7 @@
 
 
 <Carousel {slides}>
-    <img src={slide.src.replace(/^\/static/, '')} alt={slide.alt} slot="slide" let:slide class="object-cover w-full md:h-[250px] h-[180px]">
+    <img src={slide.src.replace(/^\/static/, '')} alt={slide.alt} slot="slide" let:slide class="object-cover w-full md:h-auto">
     <div
         slot="dots"
         let:dots
@@ -21,7 +21,7 @@
             <button
                 {...a11y}
                 on:click={() => scrollTo(i)}
-                class={'rounded-full cursor-pointer transition-all w-1.5 h-1.5  aria-[selected="true"]:bg-black bg-gray'}
+                class={'rounded-full cursor-pointer transition-all w-1.5 h-1.5  aria-[selected="true"]:bg-[#c5e618] bg-[#e7f6a1]'}
             />
 		{/each}
 	</div>

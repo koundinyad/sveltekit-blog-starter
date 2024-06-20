@@ -17,14 +17,15 @@ export default {
 		extend: {
 			colors: {
 				black: '#272727',
+				darkGray: '	#303030',
 				cream: '#FEFFF6',
 				gray: '#c4c4c4'
 			},
 			fontSize: {
-				sm: '0.85rem',
+				sm: '0.8rem',
 				xs: '0.65rem'
 			}
-		},
+		}
 	}
 };
 

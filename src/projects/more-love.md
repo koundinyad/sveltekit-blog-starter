@@ -4,10 +4,9 @@ year: 2022
 type: Code, Design
 slug: more-love
 hidden: false
-date: 0202241
+date: 102
 link: https://morelove.netlify.app
-cover: /static/images/cover/more_love_center.webp
-featured: no
+featured: false
 ---
 
 MORE LOVE is a private display of affection on the Internet. Made with love with P5.js and Teachable Machine, MORE LOVE translates gestures into virtual love messages. A webpiece to think about quieter and more loving interactions on the Internet.

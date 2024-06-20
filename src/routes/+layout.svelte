@@ -26,25 +26,25 @@
 </svelte:head>
 
 <!-- DOTS -->
-<div class="fixed flex top-1 left-0 p-2 flex-row w-full md:w-auto md:top-0 md:left-0  md:flex-col md:h-full justify-between z-[10]">
+<!-- <div class="fixed flex top-1 left-0 p-2 flex-row w-full justify-between z-[10]">
 	<div class="relative w-[20px] h-[20px]">
-		<svg class="w-[20px] h-[20px]" xmlns="http://www.w3.org/2000/svg">
+		<svg class="w-[20px] h-[20px] fill-darkGray" xmlns="http://www.w3.org/2000/svg">
 			<circle cx="10" cy="10" r="5" />
 		</svg>
 	</div>
 	<div class="relative w-[20px] h-[20px]">
-		<svg class="w-[20px] h-[20px]" xmlns="http://www.w3.org/2000/svg">
+		<svg class="w-[20px] h-[20px] fill-darkGray" xmlns="http://www.w3.org/2000/svg">
 			<circle cx="10" cy="10" r="5" />
 		</svg>
 	</div>
 	<div class="relative w-[20px] h-[20px]">
-		<svg class="w-[20px] h-[20px]" xmlns="http://www.w3.org/2000/svg">
+		<svg class="w-[20px] h-[20px] fill-darkGray" xmlns="http://www.w3.org/2000/svg">
 			<circle cx="10" cy="10" r="5" />
 		</svg>
 	</div>
-</div>
+</div> -->
 
-<div id="container" class="h-screen max-w-[1440px] self-center m-auto">
+<div id="container" class="h-screen max-w-[1440px] mt-4 self-center m-auto overscroll-x-none">
 	<slot></slot>
 </div>
 

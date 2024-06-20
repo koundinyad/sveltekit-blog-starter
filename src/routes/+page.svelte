@@ -10,14 +10,6 @@
 	let images = [];
 	// Initiate array for filtered project images
 	let filteredImages = [];
-
-	// Array of colors
-	const colors = ['#CAC444', '#ED7BA1', '#ED4005', '#91CBDA'];
-
-	// Function to get a random color
-	function getRandomColor() {
-		return colors[Math.floor(Math.random() * colors.length)];
-	}
 	// Initialize $allProjects as an empty array
 	let allProjects = writable([]);
 
@@ -91,44 +83,45 @@
 </div>
 
 <div class="flex flex-col md:mx-4 mx-4">
-	<!-- TITLE & MENU -->
-	<section class="grid_template mt-12 md:mt-4 justify-end">
+	<!-- TITLE -->
+	<section class="grid_template mt-12 md:mt-4">
 		<p class="md:col-start-3 md:col-span-3 col-start-1 col-span-2 mb-0">
 			April Chu
 		</p>
 		<!-- <div class="md:col-end-10 md:col-span-3 col-start-3 col-span-6 place-self-end" >
 			<Nav />
 		</div> -->
-		<div class="md:col-start-7 md:col-span-4 col-start-2 col-span-5">
+		<div class="md:col-start-8 md:col-span-4 col-start-2 col-span-5">
 			<p>
-				April is designer that works with code. With roots in web and brand, her practice is supplemented by research into alternative Internet & media cultures<sup>01</sup>. Based in London by way of Taipei and California. She holds a master’s from the Creative Computing Institute (UAL) and a bachelor’s from Wellesley College.
+				<sup class="text-gray">About</sup>April is a designer that works with code. Her design practice is supplemented by research into alternative Internet & media cultures. She holds a master’s from the Creative Computing Institute (UAL) and a bachelor’s from Wellesley College. She is based in London by way of SF, BOS, & TPE.
 			</p>
 			<div>
-				<p class="mb-0 text-gray">Find me elsewhere. Currently open for opportunities.</p>
+				<p class="mb-0 ">Find her elsewhere. Available for projects!</p>
 				<a href="mailto:hi@april.wiki" class="hover:link-hover text-sm">hi@april.wiki,&nbsp;</a>
 				<a href="https://read.cv/aprlc" class="hover:link-hover text-sm">read.cv,&nbsp;</a>
 				<a href="https://www.are.na/april-c" class="hover:link-hover text-sm"> are.na,&nbsp;</a>
 				<a href="https://read.cv/aprlc" class="hover:link-hover text-sm">insta</a>
 			</div>
 		</div>
-		<div class="md:col-start-10 md:col-span-2 col-start-4 col-span-3">
+		<!-- <div class="md:col-start-10 md:col-span-2 col-start-4 col-span-3">
 			<p class="text-xs leading-3">
 				<sup>01</sup>
 				Currently building an online radio. You can read about it here.
 			</p>
-		</div>
+		</div> -->
 	</section>
 
 	<!-- FEATURED PROJECTS -->
 	<section class="grid_template" id="featured-work">
 		<!-- section title -->
-		<!-- <h4 class="md:col-start-2 col-span-4 text-gray mb-4 col-start-2">Featured Work</h4> -->
+		<!-- <hr class="w-screen border-gray"> -->
+		<h4 class="md:col-start-3 col-span-4 text-darkGray mb-4 col-start-2">Featured Work</h4>
 		<!-- project block -->
 		{#each $allProjects as project}
-			{#if project.metadata.featured === 'yes'}
+			{#if project.metadata.featured === true && project.metadata.hidden === false}
 				<div class="md:col-start-3 md:col-span-3 col-start-1 col-span-6">
 					<div class="flex flex-col">
-						<div class="flex flex-row gap-2 content-end">
+						<div class="flex flex-row content-end">
 							<!-- project title -->
 							<p class="mb-0">
 								{project.metadata.title}
@@ -138,7 +131,7 @@
 								<a
 									href={project.metadata.link}
 									target="_blank"
-									class="text-[0.5rem] px-[0.25rem] border border-black rounded-full ml-1 hover:link-hover" >Visit ↗</a>
+									class="text-sm hover:link-hover"><sup>Visit ↗</sup></a>
 							{/if}
 						</div>
 						<!-- project details -->
@@ -146,7 +139,7 @@
 					</div>
 				</div>
 					<!-- project blurb -->
-					<div class="md:col-start-7 md:col-span-4 col-start-2 col-span-5">
+					<div class="md:col-start-8 md:col-span-4 col-start-2 col-span-5">
 						<svelte:component this={project.default}/>
 					</div>
 				<!-- images -->
@@ -161,12 +154,13 @@
 	<!-- WORK -->
 	<section class="grid_template md:mt-12" id="work">
 		<!-- section title -->
-		<h4 class="md:col-start-5 text-gray mb-4 col-start-2 col-span-4">Clippings</h4>
+		<!-- <hr class="w-screen border-gray"> -->
+		<h4 class="md:col-start-3 col-span-4 text-darkGray mb-4 col-start-2">Moooooore Work</h4>
 		<!-- project block -->
 		<div class="md:col-start-3 md:col-span-8 col-start-1 col-span-6">
-			<div class="flex gap-4 col-span-3">
+			<div class="grid grid-cols-2 md:grid-cols-2 gap-4">
 				{#each $allProjects as project}
-					{#if project.metadata.featured === 'no'}
+					{#if project.metadata.featured === false && project.metadata.hidden === false}
 						<div class="flex-1">
 							<div class="flex flex-col">
 								<div class="flex flex-row justify-between">
@@ -180,7 +174,7 @@
 										<a
 											href={project.metadata.link}
 											target="_blank"
-											class="text-[0.5rem] px-[0.25rem] border border-black rounded-full ml-1 hover:link-hover" >Visit ↗</a>
+											class="text-sm hover:link-hover"><sup>Visit ↗</sup></a>
 									{/if}
 									</div>
 									<!-- project details -->
@@ -192,7 +186,7 @@
 								</p>
 								<!-- project images -->
 								<div class="my-2">
-									<CarouselSingle images={project.images} height={200}>
+									<CarouselSingle images={project.images} height={300}>
 									</CarouselSingle>
 								</div>
 								<!-- project details -->
@@ -207,7 +201,7 @@
 
 	<!-- COLOPHON -->
 	<section class="grid_template">
-		<div class="md:col-start-10 md:col-span-2 col-start-4 col-span-3">
+		<div class="md:col-start-10 md:col-span-2 col-start-4 col-span-3 mt-12 mb-8">
 			<p class="text-xs leading-3">
 				<sup class="text-gray">Colophon</sup>
 				This website is hand-coded and maintained by myself with the help of KD. Built with SvelteKit. Type is set in Fluxish by OSP Foundry.
